@@ -21,7 +21,7 @@ export default function RootLayout({
                 <Header/>
                 {children}
             </body>
-            <body className={inter.className}>{children}</body>
+            
         </html>
     );
 }

@@ -7,7 +7,7 @@ export function Header() {
 
 
     return (
-        <div className="w-full flex items-center justify-center h-16 bg-slate-100 mb-4">
+        <div className="w-full flex items-center justify-center h-16 bg-slate-50 mb-4">
             <header className="flex w-full max-w-7xl items-center justify-between px-4 mx-auto">
                 <span className="w-auto h-auto font-bold">
                     Raise Store
@@ -15,14 +15,13 @@ export function Header() {
 
                 <nav>
                     <ul className="flex">
-                        <Link href='/'>Shop</Link>
+                        <Link href='/' className="font-medium">Shop</Link>
                     </ul>
                 </nav>
 
                 <div className="flex gap-4 justify-center items-center">
                     <InputSearch placeholder="Quick search..."/>
                     <CartControl/>
-                    
                 </div>
 
             </header>
