@@ -25,12 +25,22 @@ export function Main(props : MainProps){
                         </div>
                     </div>
                 </section>
+
                 <section className="mt-10">
                     <div>
-                        <span>Category</span>
+                        <ul className="flex gap-4">
+                            <li>All</li>
+                            <li>Men</li>
+                            <li>Women</li>
+                            <li>Eletronics</li>
+                            <li>Jewelery</li>
+                        </ul>
                     </div>
-                    <section>
-                        <div></div>
+
+                    <section >
+                        <div className="h-screen bg-slate-600 mt-10">
+
+                        </div>
                     </section>
                 </section>
             </main>

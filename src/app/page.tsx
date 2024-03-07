@@ -1,24 +1,32 @@
+'use client'
+
 import { Container } from "@/components/Container";
 import { Main } from "@/components/Main/ContentMain";
+import { useState, useEffect } from "react";
 
 export default function Home() {
+
+
+
     return (
-        <section className="relative">
-            <div className="bg-white w-full h-full">
-                <div className="inset-0 bg-cover bg-center h-96 bg-no-repeat" style={{ backgroundImage: `url('/images/bgImg.jpg')`}}>
-                </div>
-                <div className="absolute bg-transparent right-1/3 top-1/2 transform -translate-y-1/2 font-extrabold text-white mx-auto text-center select-none" style={{fontSize: '15rem'}}>
-                    Shop
-                </div>
-            </div>
-            <div className="relative -mt-24">
-                <Container>
-                    <div className=" z-20 bg-white rounded-lg">
-                        <Main/>
+        <section>
+            <div className="bg-white relative w-full h-screen">
+                <div
+                    className=" flex items-center justify-center inset-0 bg-cover bg-center bg-no-repeat h-56 xl:h-5/6 md:h-4/5" 
+                    style={{ backgroundImage: `url('/images/bgImg.jpg')` }}>
+
+                    <div 
+                        className="relative mx-auto text-center select-none w-full flex bottom-5 lg:-top-7 xl:-top-8 "
+                    >
+                       <span className="text-white font-extrabold absolute text-9xl w-full">Shop</span>
                     </div>
+                </div>
+                <div className="absolute bg-white top-48 xl:top-2/4 sm:top-1/3 md:top-2/4 w-full">
+                    <Container>
+                            <Main/>
+                    </Container>
 
-                </Container>
-
+                </div>
             </div>
 
         </section>

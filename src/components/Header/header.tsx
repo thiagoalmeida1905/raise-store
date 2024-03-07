@@ -10,7 +10,7 @@ export function Header() {
 
 
     const [displayText, setDisplayText] = useState("RaiseStore");
-    const [showPlaceholder, setShowPlaceholder] = useState(true);
+
 
     useEffect( () => {
         function handleResize() {
@@ -18,12 +18,12 @@ export function Header() {
             const smallScreen = window.innerWidth < 640;
 
             if (smallScreen){
-                setDisplayText('RaiseStore');
-                setShowPlaceholder(false);
+                setDisplayText('RS');
+                
                 
             } else {
                 setDisplayText('RaiseStore');
-                setShowPlaceholder(true);
+                
             }
         }
 
@@ -43,7 +43,7 @@ export function Header() {
                 </span>
 
                 <div className="flex gap-4 justify-center items-center">
-                    <InputSearch placeholder={ showPlaceholder ? "Quick search..." : ''}/>
+                    <InputSearch placeholder= "Quick search..."/>
                     <CartControl/>
                 </div>
 
