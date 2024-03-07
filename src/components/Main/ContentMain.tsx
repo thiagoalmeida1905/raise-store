@@ -1,6 +1,5 @@
-import { inherits } from "util";
 import { Container } from "../Container";
-import { SearchIcon } from "../icons/search-icon";
+
 
 interface MainProps {
 
