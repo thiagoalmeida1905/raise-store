@@ -9,9 +9,9 @@ export function InputSearch(props: InputProps){
 
     return(
 
-        <div className="w-72 bg-slate-200  rounded-lg justify-center relative">
+        <div className="w-72 rounded-3xl justify-center border border-black relative flex items-center px-2  ">
             <input
-                className=" w-72 bg-slate-200 rounded-lg px-3 py-1"
+                className=" w-72 focus:outline-none rounded-lg px-3 py-1"
                 placeholder={placeholder}
             />
             <SearchIcon/>
