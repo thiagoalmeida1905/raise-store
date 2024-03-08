@@ -15,7 +15,7 @@ const apiUrl = 'https://fakestoreapi.com/products'
 const DataContext = createContext(null);
 
 export function useData() {
-    return useContext(DataContext)
+    return useContext(DataContext);
 }
 
 

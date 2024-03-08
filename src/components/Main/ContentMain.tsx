@@ -1,5 +1,6 @@
 import { Container } from "../Container";
 import { FilterByType } from "../Filter-by-type/filter-bar-type";
+import { ProductList } from "../ProductList/product-list";
 
 
 interface MainProps {
@@ -31,9 +32,7 @@ export function Main(props : MainProps){
                     <FilterByType/>
 
                     <section className="h-screen bg-slate-500 mt-10" >
-                        <div>
-
-                        </div>
+                        <ProductList/>
                     </section>
                 </section>
             </main>
