@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header/header";
 import { FilterContextProvider } from "@/context/filterContext";
+import { DataProvider } from "@/context/apiContext";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -20,10 +21,12 @@ export default function RootLayout({
     return (
         <html lang="pt-BR">
             <body className={inter.className}>
-                <FilterContextProvider>
-                    <Header/>
-                    {children}
-                </FilterContextProvider>
+                <DataProvider>
+                    <FilterContextProvider>
+                        <Header/>
+                        {children}
+                    </FilterContextProvider>
+                </DataProvider>
             </body>
             
         </html>

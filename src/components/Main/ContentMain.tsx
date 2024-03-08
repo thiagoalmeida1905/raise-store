@@ -30,8 +30,8 @@ export function Main(props : MainProps){
                 <section className="mt-10">
                     <FilterByType/>
 
-                    <section >
-                        <div className="h-screen bg-slate-600 mt-10">
+                    <section className="h-screen bg-slate-500 mt-10" >
+                        <div>
 
                         </div>
                     </section>
