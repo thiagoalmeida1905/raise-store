@@ -1,26 +1,24 @@
 'use client'
 
-import { ReactNode, createContext, useContext, useEffect, useState } from "react";
+import { ReactNode, createContext, useEffect, useState } from "react";
 
 
 interface DataProviderProps {
     children: ReactNode;
 }
 
-
 //==============
 
 const apiUrl = 'https://fakestoreapi.com/products'
 
-const DataContext = createContext(null);
+export const DataContext = createContext({
+    data: [],
+});
 
-export function useData() {
-    return useContext(DataContext);
-}
 
 
 export function DataProvider({ children}: DataProviderProps ) {
-    const [data, setData] = useState(null);
+    const [data, setData] = useState([]);
 
     useEffect(() => {
         async function getData(){
@@ -31,7 +29,7 @@ export function DataProvider({ children}: DataProviderProps ) {
                 }
                 const apiData = await response.json();
                 setData(apiData);
-                console.log(apiData)
+                console.log('console: apiData', apiData)
             } catch (error) {
                 console.log('Erro ao obtter os dados da API', error)
             }
@@ -41,9 +39,9 @@ export function DataProvider({ children}: DataProviderProps ) {
     }, [])
 
     return (
-        <DataContext.Provider value={
+        <DataContext.Provider value={{
             data
-        }>
+        }}>
             {children}
         </DataContext.Provider>
     )

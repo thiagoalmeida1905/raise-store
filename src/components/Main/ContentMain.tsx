@@ -31,7 +31,7 @@ export function Main(props : MainProps){
                 <section className="mt-10">
                     <FilterByType/>
 
-                    <section className="h-screen bg-slate-500 mt-10" >
+                    <section className="h-screen mt-10" >
                         <ProductList/>
                     </section>
                 </section>
