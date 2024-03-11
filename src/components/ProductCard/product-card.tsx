@@ -5,7 +5,7 @@ interface ProductCardProps {
 }
 export function ProductCard(props : ProductCardProps){
     return(
-        <div className=" flex items-center justify-center flex-col w-80 rounded-xl gap-5 border p-4">
+        <div className="flex items-center justify-center flex-col w-80 rounded-xl gap-5 border p-4">
 {       // eslint-disable-next-line @next/next/no-img-element
 }            <img
                 className="w-52 h-full"

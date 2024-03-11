@@ -16,7 +16,7 @@ export function ProductList(props : ProductListProps){
     }
 
     return(
-        <div className="grid grid-cols-[auto-fill, minmax(256px, 1fr)] gap-5 max-w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
             {data.map((product: Product) => <ProductCard
                 title={product.title}
                 image={product.image}

@@ -25,7 +25,7 @@ export function FilterByPriority(props : FilterByPriorityProps){
 
         <div className="flex items-center relative">
             <button 
-                className="font-normal flex items-center gap-2 border py-2 px-4 rounded-3xl cursor-pointer"
+                className="font-normal flex items-center gap-2 py-2 px-4 rounded-3xl text-xs cursor-pointer border"
                 onClick={handleOpen}
             >
                 Organizar por

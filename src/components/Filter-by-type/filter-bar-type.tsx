@@ -12,8 +12,8 @@ export function FilterByType(){
     }
 
     return(
-        <div className="flex items-center justify-between">
-            <ul className="flex items-center gap-4 list-none">
+        <div className="flex items-center gap-5 flex-col justify-between md:flex-row">
+            <ul className="flex items-center gap-4 flex-wrap list-none justify-center">
                 <li
                     className={`font-normal text-xs cursor-pointer border py-2 px-4 rounded-3xl ${type === FilterType.All ? 'bg-black text-white' : ''} `}
                     onClick={() => handleChangeType(FilterType.All)}>
