@@ -5,15 +5,15 @@ interface ProductCardProps {
 }
 export function ProductCard(props : ProductCardProps){
     return(
-        <div className="flex items-center justify-center flex-col w-80 rounded-xl gap-5 border p-4">
+        <div className="flex items-center justify-center flex-col w-80 h-96 rounded-xl gap-5 border pt-5 px-2">
 {       // eslint-disable-next-line @next/next/no-img-element
 }            <img
-                className="w-52 h-full"
+                className="h-40 max-w-full rounded-lg"
                 src={props.image}
                 alt={props.title}
             />
             <div className="bg-white w-full flex flex-col gap-4 items-center">
-                <h3 className="text-base font-semibold mt-4">{props.title}</h3>
+                <h3 className="text-sm font-semibold mt-4">{props.title}</h3>
                 <p className="font-bold text-sm">${props.price}</p>
             </div>
 
