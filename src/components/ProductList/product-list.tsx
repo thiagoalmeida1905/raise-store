@@ -1,7 +1,9 @@
 'use client'
 
 
-import { useData } from "@/hooks/useData";
+
+import { useProducts } from "@/hooks/useProduct";
+// import { useProducts } from "@/hooks/useProduct";
 import { ProductCard } from "../ProductCard/product-card";
 import { Product } from "@/types/products";
 
@@ -9,11 +11,7 @@ interface ProductListProps {
 
 }
 export function ProductList(props : ProductListProps){
-    const { data } = useData();
-
-    if (!data) {
-        return <div>Carregando...</div>
-    }
+    const { data } = useProducts();
 
     return(
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 place-items-center xl:grid-cols-3">

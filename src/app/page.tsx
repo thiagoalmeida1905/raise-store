@@ -2,11 +2,9 @@
 
 import { Container } from "@/components/Container";
 import { Main } from "@/components/Main/ContentMain";
-import { useState, useEffect } from "react";
+
 
 export default function Home() {
-
-
 
     return (
         <section>

@@ -1,11 +1,12 @@
-'use client';
+
 
 import { useFilter } from "@/hooks/useFilter"
 import { FilterType } from "@/types/filter-types"
 import { FilterByPriority } from "../Filter-by-priority/filter-by-priority";
 
+
 export function FilterByType(){
-    const { type, setType } = useFilter(); // useFilter para obter est atual do filtro e a função para atualizar o estado
+    const { type, setType, setCategory } = useFilter(); 
 
     const handleChangeType = (value: FilterType) => {
         setType(value)
@@ -32,7 +33,7 @@ export function FilterByType(){
                 <li
                     className={`font-normal text-xs cursor-pointer ${type === FilterType.Electronics ? 'bg-black text-white' : ''} border py-2 px-4 rounded-3xl`}
                     onClick={() => handleChangeType(FilterType.Electronics)}>
-                    Eletronics
+                    Electronics
                 </li>
                 <li
                     className={`font-normal text-xs cursor-pointer ${type === FilterType.Jewelry ? 'bg-black text-white' : ''} border py-2 px-4 rounded-3xl`} onClick={() => handleChangeType(FilterType.Jewelry)}>
