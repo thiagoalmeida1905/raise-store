@@ -1,11 +1,13 @@
 import { InputHTMLAttributes } from "react";
 import { SearchIcon } from "../icons/search-icon";
+import { useFilter } from "@/hooks/useFilter";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement>{
     placeholder?: string,
 }
 export function InputSearch(props: InputProps){
     const { placeholder, ...rest } = props;
+    const { setSearch } = useFilter();
 
     return(
 
@@ -14,8 +16,12 @@ export function InputSearch(props: InputProps){
             {...rest}
                 className="w-60 focus:outline-none rounded-lg px-3 py-1"
                 placeholder={placeholder}
+                onChange={e => setSearch(e.target.value)}
+
             />
-            <SearchIcon/>
+            <button className="cursor-pointer">
+                <SearchIcon/>
+            </button>
         </div>
     )
 }

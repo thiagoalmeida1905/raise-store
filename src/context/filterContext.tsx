@@ -22,7 +22,6 @@ interface ProviderProps {
 
 export function FilterContextProvider({ children }: ProviderProps){
     const [search, setSearch] = useState('');
-
     const [type, setType] = useState(FilterType.All);
     const [category, setCategory] = useState('');
     const [priority, setPriority] = useState(PriorityTypes.Minor_price);

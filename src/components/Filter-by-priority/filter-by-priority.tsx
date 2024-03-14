@@ -10,15 +10,15 @@ interface FilterByPriorityProps {
 }
 
 export function FilterByPriority(props : FilterByPriorityProps){
-    const { setPriority } = useFilter();
+    const { priority, setPriority } = useFilter();
     const [isOpen, setIsOpen] = useState(false);
 
-
+    //se tiver fechado > abre | e vice-versa
     const handleOpen = () => setIsOpen(prev => !prev);
 
     const handleUpdatePriority = (value: PriorityTypes) => {
         setPriority(value);
-        setIsOpen(false);
+        setIsOpen(true);
     }
     
     return(
@@ -33,8 +33,14 @@ export function FilterByPriority(props : FilterByPriorityProps){
                 {isOpen && (
                     <ul 
                     className="absolute shadow-md rounded-sm py-3 w-44 right-1 top-full text-sm bg-zinc-200 px-2">
-                        <li className="mb-2 cursor-pointer" onClick={() => handleUpdatePriority(PriorityTypes.Biggest_price)}>Preço: Maior - Menor</li>
-                        <li className="cursor-pointer" onClick={() => handleUpdatePriority(PriorityTypes.Minor_price)}>Preço: Menor - Maior</li>
+                        <li 
+                            className="mb-2 cursor-pointer" 
+                            onClick={() => handleUpdatePriority(PriorityTypes.Biggest_price)}>Preço: Maior - Menor
+                        </li>
+                        <li 
+                            className="cursor-pointer" 
+                            onClick={() => handleUpdatePriority(PriorityTypes.Minor_price)}>Preço: Menor - Maior
+                        </li>
                     </ul>
                 )}
             </button>

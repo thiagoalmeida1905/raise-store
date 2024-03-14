@@ -4,16 +4,31 @@ import { ProductCard } from "../ProductCard/product-card";
 import { useState } from 'react';
 import { useProducts } from "@/hooks/useProduct";
 import { useFilter } from "@/hooks/useFilter";
+import { PriorityTypes } from "@/types/priority-types";
 
 
 export function ProductList() {
     const { data, loading } = useProducts();
-    const { category, setCategory } = useFilter();
+    const { category, priority, search } = useFilter();
 
-    // Se category for true -> em data(dados da api) faz a filtragem e passa o valor com letras minusculas
-    const filteredProducts = category
-        ? data.filter(product => product.category.toLowerCase() === category.toLowerCase())
-        : data;
+    // FIltragem por categoria
+    let filteredProducts = 
+    category ? data.filter(product => product.category.toLowerCase() === category.toLowerCase()) : data;
+
+    if (priority === PriorityTypes.Biggest_price){
+        filteredProducts.sort((a,b) => b.price - a.price);
+        
+    } else if ( priority === PriorityTypes.Minor_price) {
+        filteredProducts.sort((a,b) => a.price - b.price);
+    }
+
+    if (search !== '') {
+        const searchTerm = search.toLowerCase();
+        filteredProducts = filteredProducts.filter(product =>
+            product.title.toLowerCase().includes(searchTerm) ||
+            product.description.toLowerCase().includes(searchTerm)
+        );
+    }
 
     return (
         <div>
