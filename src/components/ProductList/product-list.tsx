@@ -1,27 +1,38 @@
 'use client'
 
-
-
-import { useProducts } from "@/hooks/useProduct";
-// import { useProducts } from "@/hooks/useProduct";
 import { ProductCard } from "../ProductCard/product-card";
-import { Product } from "@/types/products";
+import { useState } from 'react';
+import { useProducts } from "@/hooks/useProduct";
+import { useFilter } from "@/hooks/useFilter";
 
-interface ProductListProps {
 
-}
-export function ProductList(props : ProductListProps){
-    const { data } = useProducts();
+export function ProductList() {
+    const { data, loading } = useProducts();
+    const { category, setCategory } = useFilter();
 
-    return(
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 place-items-center xl:grid-cols-3">
-            {data.map((product: Product) => <ProductCard
-                title={product.title}
-                image={product.image}
-                price={product.price}
-                key={product.id}
-            />
+    // Se category for true -> em data(dados da api) faz a filtragem e passa o valor com letras minusculas
+    const filteredProducts = category
+        ? data.filter(product => product.category.toLowerCase() === category.toLowerCase())
+        : data;
+
+    return (
+        <div>
+
+            {loading ? (
+                <p>Carregando...</p>
+            ) : (
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 place-items-center xl:grid-cols-3">
+                    {filteredProducts.map(product => (
+                        <ProductCard
+                            key={product.id}
+                            title={product.title}
+                            image={product.image}
+                            price={product.price}
+                        />
+                    ))}
+                </div>
             )}
+
         </div>
-    )
+    );
 }

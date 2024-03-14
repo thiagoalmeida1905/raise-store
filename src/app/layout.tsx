@@ -4,8 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/Header/header";
 import { FilterContextProvider } from "@/context/filterContext";
 
-
-
+//======================
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,7 +27,6 @@ export default function RootLayout({
                     {children}
                 </FilterContextProvider>
             </body>
-            
         </html>
     );
 }

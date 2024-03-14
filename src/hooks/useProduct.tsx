@@ -1,27 +1,21 @@
 'use client'
 
-import { useFilter } from "@/hooks/useFilter";
-import { ReactNode,  useEffect, useState } from "react";
 
-
-interface DataProviderProps {
-    children: ReactNode;
-}
+import { Product } from "@/types/products";
+import {  useEffect, useState } from "react";
 
 //==============
 
 const apiUrl = 'https://fakestoreapi.com/products/'
 
-
-
 export function useProducts() {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState<Product[]>([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        
+
         async function getData(){
             try {
-
                 const response = await fetch(apiUrl);
 
                 if (!response.ok) {
@@ -30,10 +24,11 @@ export function useProducts() {
 
                 const apiData = await response.json();
                 setData(apiData);
-                console.log(apiData)
 
             } catch (error) {
                 console.log('Erro ao obtter os dados da API', error)
+            } finally {
+                setLoading(false);
             }
         }
 
@@ -42,7 +37,7 @@ export function useProducts() {
 
     return {
         data,
-        setData
+        loading
     }
 }
 
