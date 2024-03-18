@@ -5,6 +5,7 @@ import { Container } from "../Container";
 import { FilterByType } from "../Filter-by-type/filter-bar-type";
 import { ProductList } from "../ProductList/product-list";
 import { useFilter } from "@/hooks/useFilter";
+import { Contact } from "../Contact/contact";
 
 
 interface MainProps {
@@ -17,7 +18,7 @@ export function Main(props : MainProps){
         <Container>
             <main>
                 <section className=" flex justify-between pt-4">
-                    <span>Give All You Need</span>
+                    <span className="text-3xl font-semibold">Give All You Need</span>
                     <div className="flex items-center">
                         <div className=" w-60 border border-black flex rounded-3xl items-center ">
                             <input
@@ -38,9 +39,10 @@ export function Main(props : MainProps){
                 <section className="mt-10">
                     <FilterByType/>
 
-                    <section className="h-screen mt-10" >
+                    <section className="mt-10" >
                         <ProductList/>
                     </section>
+
                 </section>
             </main>
         </Container>
