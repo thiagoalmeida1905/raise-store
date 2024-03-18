@@ -17,8 +17,8 @@ export function Main(props : MainProps){
     return(
         <Container>
             <main>
-                <section className=" flex justify-between pt-4">
-                    <span className="text-3xl font-semibold">Give All You Need</span>
+                <section className="main-section flex justify-between pt-10 ">
+                    <span className="xl:text-3xl font-semibold">Give All You Need</span>
                     <div className="flex items-center">
                         <div className=" w-60 border border-black flex rounded-3xl items-center ">
                             <input

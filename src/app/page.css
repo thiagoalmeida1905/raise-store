@@ -1,0 +1,23 @@
+.span-texto {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25rem;
+}
+
+
+@media (max-width: 1250px) {
+    .span-texto {
+        font-size: 16rem;
+        top: 80%;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .span-texto {
+        font-size: 10rem;
+        top: 90%;
+    }
+}
