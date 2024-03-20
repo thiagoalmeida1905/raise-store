@@ -1,11 +1,11 @@
 'use client'
 
-import { useState } from "react";
+
 import { Container } from "../Container";
 import { FilterByType } from "../Filter-by-type/filter-bar-type";
 import { ProductList } from "../ProductList/product-list";
 import { useFilter } from "@/hooks/useFilter";
-import { Contact } from "../Contact/contact";
+
 
 
 interface MainProps {

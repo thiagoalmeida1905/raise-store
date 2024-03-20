@@ -1,7 +1,7 @@
 'use client'
 
 import { ProductCard } from "../ProductCard/product-card";
-import { useState } from 'react';
+
 import { useProducts } from "@/hooks/useProduct";
 import { useFilter } from "@/hooks/useFilter";
 import { PriorityTypes } from "@/types/priority-types";
