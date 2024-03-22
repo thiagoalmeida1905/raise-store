@@ -14,10 +14,40 @@ export default function ProductPage ({searchParams}: { searchParams: {id: string
     
     const { id } = searchParams;
     const { product, loading} = useProduct({ productId: id })
-    
-    console.log(id, product)
+
     if (!product) {
         return <div>Carregando produto</div>
+    }
+
+    
+
+    const handleAddToCart = () => {
+        let cartItems = localStorage.getItem('cart-items')
+        if(cartItems) { // se tiver algum item nocarrinho...
+            let cartItemsArray = JSON.parse(cartItems);
+
+            let existingProductIndex = cartItemsArray.findIndex((item: { id: string }) => item.id === searchParams.id);
+
+            if (existingProductIndex != -1) {
+                cartItemsArray[existingProductIndex].quantity += 1;
+            } else {
+                cartItemsArray.push({...product, quantity: 1, id: searchParams.id} )
+                localStorage.setItem('cart-items', JSON.stringify(cartItemsArray))
+            }
+
+        } else {// se não tiver itens no carrinho
+            const newCart = [
+                {
+                    ...product,
+                    id: searchParams.id,
+                    quantity: 1
+                }
+            ]
+            localStorage.setItem('cart-items', JSON.stringify(newCart))
+        }
+            
+        const newValue = []
+        
     }
 
     return (
@@ -39,7 +69,9 @@ export default function ProductPage ({searchParams}: { searchParams: {id: string
                             </div>
 
                         </div>
-                        <button className="flex self-center items-center gap-2 justify-center max-w-96 border border-black bg-cyan-200 py-2 px-10 rounded-3xl font-semibold color-black">
+                        <button 
+                            className="flex self-center items-center gap-2 justify-center max-w-96 border border-black bg-cyan-200 py-2 px-10 rounded-3xl font-semibold color-black" 
+                            onClick={handleAddToCart}>
                             <CartIcon/>
                             Add cart
                         </button>
