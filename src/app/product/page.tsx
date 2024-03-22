@@ -32,14 +32,14 @@ export default function ProductPage ({searchParams}: { searchParams: {id: string
                             <span className="font-semibold mb-5 border rounded-3xl bg-white border-black r p-2 text-sm">{product?.category}</span>
                             <h2 className="text-xl mb-3">{product?.title}</h2>
                             <span className="font-extrabold mb-5">$ {product?.price}</span>
-                            <p className="text-xs mb-10">*Frete de R$40,00 para todo o Brasil. Grátis para compras acima de R$100,00</p>
+                            <p className="text-xs mb-10">*Shipping costs $40.00 throughout Brazil. Free for purchases over $100.00.</p>
                             <div>
                                 <h3 className="uppercase font-semibold mb-3">Description</h3>
                                 <p className="text-sm leading-relaxed">{product?.description}</p>
                             </div>
 
                         </div>
-                        <button className="flex self-center items-center gap-2 justify-center max-w-96 border-2 border-black bg-cyan-400 py-2 px-10 rounded-3xl font-semibold color-black">
+                        <button className="flex self-center items-center gap-2 justify-center max-w-96 border border-black bg-cyan-200 py-2 px-10 rounded-3xl font-semibold color-black">
                             <CartIcon/>
                             Add cart
                         </button>

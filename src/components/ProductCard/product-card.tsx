@@ -1,11 +1,25 @@
+import { useRouter } from "next/navigation"
+
 interface ProductCardProps {
     image: string,
     title: string,
     price: number,
+    id: string,
 }
 export function ProductCard(props : ProductCardProps){
+
+    const router = useRouter();
+
+    const handleNavigate= () => {
+        router.push("/product?id=" + props.id)
+    }
+
     return(
-        <div className="flex items-center justify-center flex-col w-80 h-96 rounded-xl gap-5 border pt-5 px-2">
+        <div 
+            className="flex items-center justify-center flex-col w-80 h-96 rounded-xl gap-5 border pt-5 px-2 cursor-pointer"
+            onClick={handleNavigate}
+
+        >
 {       // eslint-disable-next-line @next/next/no-img-element
 }            <img
                 className="h-40 max-w-full rounded-lg"

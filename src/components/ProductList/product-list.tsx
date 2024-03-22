@@ -1,7 +1,6 @@
 'use client'
 
 import { ProductCard } from "../ProductCard/product-card";
-
 import { useProducts } from "@/hooks/useProduct";
 import { useFilter } from "@/hooks/useFilter";
 import { PriorityTypes } from "@/types/priority-types";
@@ -32,7 +31,6 @@ export function ProductList() {
 
     return (
         <div>
-
             {loading ? (
                 <p>Carregando...</p>
             ) : (
@@ -43,6 +41,7 @@ export function ProductList() {
                             title={product.title}
                             image={product.image}
                             price={product.price}
+                            id={product.id}
                         />
                     ))}
                 </div>
