@@ -49,12 +49,12 @@ export default function ProductPage ({searchParams}: { searchParams: {id: string
         <Container>
             <div className="flex items-start justify-center flex-col">
                 <BackButton navigate="/"/>
-                <section className="flex justify-center mt-20 w-full">
+                <section className="mt-20 flex flex-col items-center xl:flex-row xl:w-full">
 
-                    <img className="max-w-96 w-1/2 px-5 pb-5" src={product?.image} alt={product?.title}/>
+                    <img className="xl:max-w-96 w-1/2 px-5 pb-5" src={product?.image} alt={product?.title}/>
                     <div className="flex flex-col justify-between pb-5">
-                        <div className="flex items-start flex-col px-5">
-                            <span className="font-semibold mb-5 border rounded-3xl bg-white border-black r p-2 text-sm">{product?.category}</span>
+                        <div className="flex lg:items-start flex-col px-5">
+                            <span className="font-semibold mb-5 border rounded-3xl bg-white border-black p-2 text-sm self-center xl:self-start">{product?.category}</span>
                             <h2 className="text-xl mb-3">{product?.title}</h2>
                             <span className="font-extrabold mb-5">$ {product?.price}</span>
                             <p className="text-xs mb-10">*Shipping costs $40.00 throughout Brazil. Free for purchases over $100.00.</p>
@@ -64,7 +64,7 @@ export default function ProductPage ({searchParams}: { searchParams: {id: string
                             </div>
                         </div>
                         <button 
-                            className="flex self-center items-center gap-2 justify-center max-w-96 border border-black bg-cyan-200 py-2 px-10 rounded-3xl font-semibold color-black" 
+                            className="flex self-center items-center gap-2 justify-center max-w-96 border border-black bg-cyan-200 py-2 px-10 rounded-3xl font-semibold color-black mt-10" 
                             onClick={handleAddToCart}>
                             <CartIcon/>
                             Add cart

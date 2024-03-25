@@ -23,11 +23,11 @@ export function CartItem({ product, handleUpdateQuantity, handleDelete } : CartI
             >
                 <DeleteIcon />
             </button>
-            <img className="w-50 max-h-64 rounded-tl-lg rounded-bl-lg p-5" src={product.image} alt={product.title}/>
-            <div className="px-10 py-5 flex flex-col gap-8">
+            <img className="w-24 xl:w-52 max-h-64 rounded-tl-lg rounded-bl-lg p-5" src={product.image} alt={product.title}/>
+            <div className="px-10 flex flex-col gap-8">
                 <h4 className="font-bold text-xl">{product.title}</h4>
                 <p className="text-xs font-medium overflow-hidden text-ellipsis max-h-20">{product.description}</p>
-                <div className="flex justify-between ">
+                <div className="flex justify-between">
                     <select className="bg-slate-200 p-2 rounded-lg border border-black cursor-pointer" value={product.quantity} onChange={handleChange}>
                         <option value={1}>1</option>
                         <option value={2}>2</option>
