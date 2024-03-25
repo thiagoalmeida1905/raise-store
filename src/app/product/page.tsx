@@ -19,8 +19,6 @@ export default function ProductPage ({searchParams}: { searchParams: {id: string
         return <div>Carregando produto</div>
     }
 
-    
-
     const handleAddToCart = () => {
         let cartItems = localStorage.getItem('cart-items')
         if(cartItems) { // se tiver algum item nocarrinho...
@@ -45,9 +43,6 @@ export default function ProductPage ({searchParams}: { searchParams: {id: string
             ]
             localStorage.setItem('cart-items', JSON.stringify(newCart))
         }
-            
-        const newValue = []
-        
     }
 
     return (
@@ -67,7 +62,6 @@ export default function ProductPage ({searchParams}: { searchParams: {id: string
                                 <h3 className="uppercase font-semibold mb-3">Description</h3>
                                 <p className="text-sm leading-relaxed">{product?.description}</p>
                             </div>
-
                         </div>
                         <button 
                             className="flex self-center items-center gap-2 justify-center max-w-96 border border-black bg-cyan-200 py-2 px-10 rounded-3xl font-semibold color-black" 

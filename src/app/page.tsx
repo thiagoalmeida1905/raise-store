@@ -21,7 +21,6 @@ export default function Home() {
                     </span>
                 </div>
 
-
             </div>
                 <div className=" bg-white h-auto w-full absolute xl:top-3/4">
                     <Main/>

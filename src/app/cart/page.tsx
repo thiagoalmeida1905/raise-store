@@ -12,7 +12,7 @@ export default function CartPage() {
     const { value, updateLocalStorage } = useLocalStorage<ProductInCart[]>('cart-items', []);
 
     useEffect(() => {
-        setLoading(false); // Simulando que os produtos foram carregados ao montar o componente
+        setLoading(false);
     }, []); 
 
     if (loading) {
@@ -24,7 +24,7 @@ export default function CartPage() {
     }
 
     const calculateTotal = (value: ProductInCart[]) => {
-        return value.reduce((sum, item) => sum += (item.price * item.quantity), 0).toFixed(2);
+        return value.reduce((sum, item) => sum += (item.price * item.quantity), 0);
     }
 
     const cartTotal = calculateTotal(value);
@@ -42,6 +42,7 @@ export default function CartPage() {
             if (item.id !== id) return item
         })
         updateLocalStorage(newValue)
+        window.location.reload()
     }
 
     const deliveryFee = 40.00;
@@ -53,7 +54,6 @@ export default function CartPage() {
             <div className="flex justify-center flex-col mt-20">
                 {value.length === 0 ? (
                     <p className="self-center justify-center my-5 text-sm">Your cart is empty :( <br/> To add products to your cart, browse the store or use the website search. </p>
-                    
                 ) : (
                     <>
                         <h3 className="uppercase font-bold">Your Cart</h3>

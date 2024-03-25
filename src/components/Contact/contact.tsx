@@ -1,10 +1,8 @@
 
 export function Contact(){
     return(
-        
             <section className="w-full mt-10 rounded-3xl text-white bg-gradient-to-r from-zinc-800 to-zinc-900 flex flex-col lg:h-56 lg:flex-row">
                 <div className="rounded-3xl p-6 flex flex-col gap-6 lg:w-2/3 lg:p-10"> 
-
                     <p className="text-4xl font-medium leading-tight lg:text-5x1">Ready to get Our New Stuff?</p>
                     <div className="flex items-center border-black relative ">
                         <div className="flex rounded-3xl items-center  border-black">
