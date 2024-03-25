@@ -52,7 +52,7 @@ export default function ProductPage ({searchParams}: { searchParams: {id: string
 
     return (
         <Container>
-            <div className="flex items-start justify-center flex-col pt-20">
+            <div className="flex items-start justify-center flex-col">
                 <BackButton navigate="/"/>
                 <section className="flex justify-center mt-20 w-full">
 

@@ -46,7 +46,6 @@ export function ProductList() {
                     ))}
                 </div>
             )}
-
         </div>
     );
 }

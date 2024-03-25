@@ -14,11 +14,11 @@ export function BackButton({ navigate }: BtnProps){
 
     return(
         <button 
-            className="flex items-center justify-center gap-2"
+            className="flex items-center justify-center gap-2 mt-20"
             onClick={handleNavigate}
         >
             <BackIcon/>
-            <p className="font-bold text-sm">Voltar</p>
+            <p className="font-bold text-sm ">Back</p>
         </button>
     )
 }

@@ -4,6 +4,7 @@
 import { InputSearch } from "../Inputs/input-search";
 import { CartControl } from "../CartControl/cart-control";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 
 export function Header() {
@@ -35,10 +36,17 @@ export function Header() {
         }
     }, [])
 
+    const router = useRouter();
+
+    const handleNavigate = () => {
+        router.push('/')
+    }
+
+
     return (
         <div className="w-full flex items-center justify-center h-16 bg-white">
             <header className="flex w-full max-w-7xl items-center justify-between px-4 mx-auto">
-                <span className="w-auto h-auto font-bold">
+                <span className="w-auto h-auto font-bold cursor-pointer" onClick={handleNavigate}>
                     {displayText}
                 </span>
 
