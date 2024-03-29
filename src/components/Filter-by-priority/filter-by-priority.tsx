@@ -5,11 +5,8 @@ import { ArrowIcon } from "../icons/arrow-icon";
 import { useFilter } from "@/hooks/useFilter";
 import { PriorityTypes } from "@/types/priority-types";
 
-interface FilterByPriorityProps {
 
-}
-
-export function FilterByPriority(props : FilterByPriorityProps){
+export function FilterByPriority(){
     const { priority, setPriority } = useFilter();
     const [isOpen, setIsOpen] = useState(false);
 
@@ -20,9 +17,8 @@ export function FilterByPriority(props : FilterByPriorityProps){
         setPriority(value);
         setIsOpen(true);
     }
-    
-    return(
 
+    return(
         <div className="flex items-center relative">
             <button 
                 className="font-normal flex items-center gap-2 py-2 px-4 rounded-3xl text-xs cursor-pointer border"

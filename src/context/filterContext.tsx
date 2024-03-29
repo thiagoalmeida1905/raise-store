@@ -1,4 +1,3 @@
-
 "use client";
 
 import { FilterType } from "@/types/filter-types";

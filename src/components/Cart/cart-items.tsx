@@ -23,7 +23,11 @@ export function CartItem({ product, handleUpdateQuantity, handleDelete } : CartI
             >
                 <DeleteIcon />
             </button>
-            <img className="w-24 xl:w-52 max-h-64 rounded-tl-lg rounded-bl-lg p-5" src={product.image} alt={product.title}/>
+            <img 
+                className="w-24 xl:w-52 max-h-64 rounded-tl-lg rounded-bl-lg p-5" 
+                src={product.image} 
+                alt={product.title}
+            />
             <div className="px-10 flex flex-col gap-8">
                 <h4 className="font-bold text-xl">{product.title}</h4>
                 <p className="text-xs font-medium overflow-hidden text-ellipsis max-h-20">{product.description}</p>

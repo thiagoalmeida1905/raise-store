@@ -7,11 +7,7 @@ import { ProductList } from "../ProductList/product-list";
 import { useFilter } from "@/hooks/useFilter";
 
 
-
-interface MainProps {
-
-}
-export function Main(props : MainProps){
+export function Main(){
     const { search, setSearch} = useFilter();
     
     return(
@@ -36,7 +32,7 @@ export function Main(props : MainProps){
                     </div>
                 </section>
 
-                <section className="mt-10">
+                <section className="mt-10"> 
                     <FilterByType/>
 
                     <section className="mt-10" >

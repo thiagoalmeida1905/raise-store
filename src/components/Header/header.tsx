@@ -1,11 +1,9 @@
 'use client'
 
-// import Link from "next/link";
 import { InputSearch } from "../Inputs/input-search";
 import { CartControl } from "../CartControl/cart-control";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-
 
 export function Header() {
     const [displayText, setDisplayText] = useState("RaiseStore");

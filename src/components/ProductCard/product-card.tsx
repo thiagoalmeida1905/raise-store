@@ -7,7 +7,6 @@ interface ProductCardProps {
     title: string,
     price: number,
     id: string,
-
 }
 
 export function ProductCard(props: ProductCardProps) {

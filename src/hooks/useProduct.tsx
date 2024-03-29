@@ -1,6 +1,5 @@
 'use client'
 
-
 import { Product } from "@/types/products";
 import {  useEffect, useState } from "react";
 

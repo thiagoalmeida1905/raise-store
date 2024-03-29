@@ -10,13 +10,13 @@ export function ProductList() {
     const { data, loading } = useProducts();
     const { category, priority, search } = useFilter();
 
-    // FIltragem por categoria
+    // Filtragem por categoria
     let filteredProducts = 
     category ? data.filter(product => product.category.toLowerCase() === category.toLowerCase()) : data;
 
     if (priority === PriorityTypes.Biggest_price){
         filteredProducts.sort((a,b) => b.price - a.price);
-        
+
     } else if ( priority === PriorityTypes.Minor_price) {
         filteredProducts.sort((a,b) => a.price - b.price);
     }
