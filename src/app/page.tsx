@@ -1,9 +1,9 @@
 'use client'
 
-import { Contact } from "@/components/Contact/contact";
+import { Contact } from "@/components/Home/Contact/contact";
 import { Container } from "@/components/common/Container";
-import { Footer } from "@/components/Footer/footer";
-import { Main } from "@/components/Main/ContentMain";
+import { Footer } from "@/components/Home/Footer/footer";
+import { Main } from "@/components/Home/Main/ContentMain";
 import '@/app/page.css'
 
 

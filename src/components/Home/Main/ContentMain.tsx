@@ -1,9 +1,9 @@
 'use client'
 
 
-import { Container } from "../common/Container";
-import { FilterByType } from "../Filters/Filter-by-type/filter-bar-type";
-import { ProductList } from "../Products/ProductList/product-list";
+import { Container } from "../../common/Container";
+import { FilterByType } from "../../Filters/Filter-by-type/filter-bar-type";
+import { ProductList } from "../../Products/ProductList/product-list";
 import { useFilter } from "@/hooks/useFilter";
 
 
