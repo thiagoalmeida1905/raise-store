@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { CartIcon } from "../icons/cart-icon";
+import { CartIcon } from "../../ui/icons/cart-icon";
 import { useRouter } from "next/navigation";
-import { useLocalStorage } from "@/hooks/useLocalStorage";
+import { useLocalStorage } from "@/hooks/localStorage/useLocalStorage";
 
 export function CartControl() {
     const { value } = useLocalStorage('cart-items', []);

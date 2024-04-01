@@ -1,7 +1,7 @@
 'use client'
 
 import { InputSearch } from "../Inputs/input-search";
-import { CartControl } from "../CartControl/cart-control";
+import { CartControl } from "../../Cart/CartControl/cart-control";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 

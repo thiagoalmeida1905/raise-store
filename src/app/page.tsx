@@ -1,7 +1,7 @@
 'use client'
 
 import { Contact } from "@/components/Contact/contact";
-import { Container } from "@/components/Container";
+import { Container } from "@/components/common/Container";
 import { Footer } from "@/components/Footer/footer";
 import { Main } from "@/components/Main/ContentMain";
 import '@/app/page.css'

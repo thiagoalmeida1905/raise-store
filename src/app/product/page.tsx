@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
 
-import { BackButton } from "@/components/BackButton/back-button";
-import { Container } from "@/components/Container";
-import { CartIcon } from "@/components/icons/cart-icon";
+import { BackButton } from "@/components/common/BackButton/back-button";
+import { Container } from "@/components/common/Container";
+import { CartIcon } from "@/components/ui/icons/cart-icon";
 import { useProduct } from "@/hooks/useProducts";
 
 interface ProductPageProps{

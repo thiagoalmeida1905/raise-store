@@ -1,5 +1,5 @@
 import { InputHTMLAttributes } from "react";
-import { SearchIcon } from "../icons/search-icon";
+import { SearchIcon } from "../../ui/icons/search-icon";
 import { useFilter } from "@/hooks/useFilter";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement>{

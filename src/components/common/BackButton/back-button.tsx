@@ -1,5 +1,5 @@
 import { useRouter } from "next/navigation";
-import { BackIcon } from "../icons/back-icon";
+import { BackIcon } from "../../ui/icons/back-icon";
 
 interface BtnProps{
     navigate: string;

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/Header/header";
+import { Header } from "@/components/common/Header/header";
 import { FilterContextProvider } from "@/context/filterContext";
 
 //======================

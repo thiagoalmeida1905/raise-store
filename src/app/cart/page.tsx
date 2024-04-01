@@ -1,9 +1,9 @@
 'use client'
 
-import { BackButton } from "@/components/BackButton/back-button";
+import { BackButton } from "@/components/common/BackButton/back-button";
 import { CartItem } from "@/components/Cart/cart-items";
-import { Container } from "@/components/Container";
-import { useLocalStorage } from "@/hooks/useLocalStorage";
+import { Container } from "@/components/common/Container";
+import { useLocalStorage } from "@/hooks/localStorage/useLocalStorage";
 import { Product, ProductInCart } from "@/types/products";
 import { useEffect, useState } from "react";
 

@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { ProductInCart } from "@/types/products"
 import { ChangeEvent } from "react"
-import { DeleteIcon } from "../icons/delete-icon"
+import { DeleteIcon } from "../ui/icons/delete-icon"
 
 interface CartItemProps {
     product: ProductInCart,
