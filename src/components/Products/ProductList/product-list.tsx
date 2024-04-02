@@ -2,13 +2,14 @@
 
 import { ProductCard } from "../ProductCard/product-card";
 import { useProducts } from "@/hooks/useProduct";
-import { useFilter } from "@/hooks/useFilter";
+
 import { PriorityTypes } from "@/types/priority-types";
+import useStore from "@/context/filterContext";
 
 
 export function ProductList() {
     const { data, loading } = useProducts();
-    const { category, priority, search } = useFilter();
+    const { category, priority, search } = useStore();
 
     // Filtragem por categoria
     let filteredProducts = 

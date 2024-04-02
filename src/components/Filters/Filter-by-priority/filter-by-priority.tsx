@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 import { ArrowIcon } from "../../ui/icons/arrow-icon";
-import { useFilter } from "@/hooks/useFilter";
 import { PriorityTypes } from "@/types/priority-types";
+import useStore from "@/context/filterContext";
 
 
 export function FilterByPriority(){
-    const { priority, setPriority } = useFilter();
+    const { priority, setPriority } = useStore();
     const [isOpen, setIsOpen] = useState(false);
 
     //se tiver fechado > abre | e vice-versa

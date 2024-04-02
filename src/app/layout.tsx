@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/common/Header/header";
-import { FilterContextProvider } from "@/context/filterContext";
 
 //======================
 
@@ -22,10 +21,8 @@ export default function RootLayout({
     return (
         <html lang="pt-BR">
             <body className={inter.className}>
-                <FilterContextProvider>
                     <Header/>
                     {children}
-                </FilterContextProvider>
             </body>
         </html>
     );

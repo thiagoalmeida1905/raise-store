@@ -1,11 +1,11 @@
 'use client'
-import { useFilter } from "@/hooks/useFilter"
 import { FilterType } from "@/types/filter-types"
 import { FilterByPriority } from "../Filter-by-priority/filter-by-priority";
+import useStore from "@/context/filterContext";
 
 
 export function FilterByType(){
-    const { type, setType, setCategory } = useFilter(); 
+    const { type, setType, setCategory } = useStore(); 
 
     const handleFilterSelection = (value: FilterType, category: string) => {
         setType(value);

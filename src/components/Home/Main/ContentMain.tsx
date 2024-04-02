@@ -1,15 +1,17 @@
 'use client'
 
 
+import useStore from "@/context/filterContext";
 import { Container } from "../../common/Container";
 import { FilterByType } from "../../Filters/Filter-by-type/filter-bar-type";
 import { ProductList } from "../../Products/ProductList/product-list";
-import { useFilter } from "@/hooks/useFilter";
+
 
 
 export function Main(){
-    const { search, setSearch} = useFilter();
-    
+
+    const { setSearch} = useStore();
+
     return(
         <Container>
             <main>

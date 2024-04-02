@@ -1,13 +1,13 @@
 import { InputHTMLAttributes } from "react";
 import { SearchIcon } from "../../ui/icons/search-icon";
-import { useFilter } from "@/hooks/useFilter";
+import useStore from "@/context/filterContext";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement>{
     placeholder?: string,
 }
 export function InputSearch(props: InputProps){
     const { placeholder, ...rest } = props;
-    const { setSearch } = useFilter();
+    const { setSearch } = useStore();
 
     return(
         <div className={`relative flex items-center justify-center border border-black rounded-3xl px-2 `}>

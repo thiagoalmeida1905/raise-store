@@ -15,7 +15,6 @@ export default function Home() {
                 <div
                     className="flex bg-cover bg-center bg-no-repeat inset-0 w-full h-full" 
                     style={{ backgroundImage: `url('/images/bgImg.jpg')` } }>
-                    
                     <span 
                         className="span-texto font-bold text-white">Shop
                     </span>
