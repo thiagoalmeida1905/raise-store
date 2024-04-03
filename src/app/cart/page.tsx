@@ -24,10 +24,11 @@ export default function CartPage() {
     }
 
     const calculateTotal = (value: ProductInCart[]) => {
-        return value.reduce((sum, item) => sum += (item.price * item.quantity), 0);
+        const total = value.reduce((sum, item) => sum += (item.price * item.quantity), 0);
+        return total.toFixed(2)
     }
 
-    const cartTotal = calculateTotal(value);
+    const cartTotal = Number(calculateTotal(value));
 
     const handleUpdateQuantity = (id: string, quantity: number) => {
         const newValue = value.map(item => {
@@ -42,11 +43,10 @@ export default function CartPage() {
             if (item.id !== id) return item
         })
         updateLocalStorage(newValue)
-        window.location.reload()
     }
 
-    const deliveryFee = 40.00;
-    const cartTotalWithDelivery = Number((cartTotal + deliveryFee)).toFixed(2);
+    const deliveryFee = Number(10);
+    const cartTotalWithDelivery = (cartTotal + deliveryFee).toFixed(2);
 
     return (
         <Container>
@@ -77,7 +77,7 @@ export default function CartPage() {
                                     </div>
                                     <div className="flex justify-between">
                                         <p>Delivery</p>
-                                        <p>$40.00</p>
+                                        <p>$10.00</p>
                                     </div>
                                     <div className="divider w-11/12 h-0.5 mx-auto bg-black"></div>
                                     <div className="flex justify-between font-bold">

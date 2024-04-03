@@ -3,6 +3,7 @@ import { CartIcon } from "../../ui/icons/cart-icon";
 import { useRouter } from "next/navigation";
 import { useLocalStorage } from "@/hooks/localStorage/useLocalStorage";
 
+// componente visual do carrinho
 export function CartControl() {
     const { value } = useLocalStorage('cart-items', []);
     const router = useRouter();
