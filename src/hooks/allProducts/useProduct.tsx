@@ -1,13 +1,14 @@
 'use client'
 
 import { Product } from "@/types/products";
-import {  useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 //==============
 
-const apiUrl = 'https://fakestoreapi.com/products/'
+export function useProducts(category: string) {
 
-export function useProducts() {
+    const apiUrl = category ? `https://fakestoreapi.com/products/category/${category}` : 'https://fakestoreapi.com/products'
+
     const [data, setData] = useState<Product[]>([]);
     const [loading, setLoading] = useState(true);
 
@@ -32,7 +33,7 @@ export function useProducts() {
         }
 
         getData();
-    }, [])
+    }, [apiUrl])
 
     return {
         data,

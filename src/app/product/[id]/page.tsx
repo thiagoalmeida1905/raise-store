@@ -4,32 +4,34 @@
 import { BackButton } from "@/components/common/BackButton/back-button";
 import { Container } from "@/components/common/Container";
 import { CartIcon } from "@/components/ui/icons/cart-icon";
-import { useProduct } from "@/hooks/useProducts";
+import { useProductDetails } from "@/hooks/ProductDetails/useProductDetail";
 
-interface ProductPageProps{
-    searchParams: { id: string};
+interface ParamsID {
+    params: {
+        id: string;
+    }
 }
 
-export default function ProductPage ({searchParams}: { searchParams: {id: string}}) {
-    
-    const { id } = searchParams;
-    const { product, loading} = useProduct({ productId: id })
+export default function ProductDetails (ParamsId: ParamsID) {
+    const id = ParamsId.params.id;
+
+    const { product} = useProductDetails({productId: id})
 
     if (!product) {
         return <div>Carregando produto</div>
     }
 
     const handleAddToCart = () => {
-        let cartItems = localStorage.getItem('cart-items')
+        let cartItems = localStorage.getItem('cart-items')// armazena os itens existentes no LocalStorage
         if(cartItems) { // se tiver algum item nocarrinho...
-            let cartItemsArray = JSON.parse(cartItems);
+            let cartItemsArray = JSON.parse(cartItems);// converte a String Json em um array
 
-            let existingProductIndex = cartItemsArray.findIndex((item: { id: string }) => item.id === searchParams.id);
+            let existingProductIndex = cartItemsArray.findIndex((item: { id: string }) => item.id === id);
 
             if (existingProductIndex != -1) {
                 cartItemsArray[existingProductIndex].quantity += 1;
             } else {
-                cartItemsArray.push({...product, quantity: 1, id: searchParams.id} )
+                cartItemsArray.push({...product, quantity: 1, id: id} )
                 localStorage.setItem('cart-items', JSON.stringify(cartItemsArray))
             }
 
@@ -37,7 +39,7 @@ export default function ProductPage ({searchParams}: { searchParams: {id: string
             const newCart = [
                 {
                     ...product,
-                    id: searchParams.id,
+                    id: id,
                     quantity: 1
                 }
             ]
@@ -57,7 +59,7 @@ export default function ProductPage ({searchParams}: { searchParams: {id: string
                             <span className="font-semibold mb-5 border rounded-3xl bg-white border-black p-2 text-sm self-center xl:self-start">{product?.category}</span>
                             <h2 className="text-xl mb-3">{product?.title}</h2>
                             <span className="font-extrabold mb-5">$ {product?.price}</span>
-                            <p className="text-xs mb-10">*Shipping costs $40.00 throughout Brazil. Free for purchases over $100.00.</p>
+                            <p className="text-xs mb-10">*Shipping costs $10.00 throughout Brazil. Free for purchases over $100.00.</p>
                             <div>
                                 <h3 className="uppercase font-semibold mb-3">Description</h3>
                                 <p className="text-sm leading-relaxed">{product?.description}</p>

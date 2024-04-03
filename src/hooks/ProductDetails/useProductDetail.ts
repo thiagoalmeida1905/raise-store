@@ -6,7 +6,7 @@ interface UseProductProps {
     productId: string;
 }
 
-export function useProduct({ productId }: UseProductProps) {
+export function useProductDetails( {productId} : UseProductProps) {
     const [product, setProduct] = useState<Product | null>(null);
     const [loading, setLoading] = useState(true);
 
@@ -15,6 +15,7 @@ export function useProduct({ productId }: UseProductProps) {
             setLoading(true);
             try {
                 const response = await fetch(`https://fakestoreapi.com/products/${productId}`);
+                
                 if (!response.ok) {
                     throw new Error('Erro ao obter os dados da API');
                 }

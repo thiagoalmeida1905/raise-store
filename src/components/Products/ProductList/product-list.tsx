@@ -1,20 +1,19 @@
 'use client'
 
 import { ProductCard } from "../ProductCard/product-card";
-import { useProducts } from "@/hooks/useProduct";
+import { useProducts } from "@/hooks/allProducts/useProduct";
 
 import { PriorityTypes } from "@/types/priority-types";
 import useStore from "@/context/filterContext";
 
 
 export function ProductList() {
-    const { data, loading } = useProducts();
     const { category, priority, search } = useStore();
+    const { data, loading } = useProducts(category);
 
     // Filtragem por categoria
-    let filteredProducts = 
-    category ? data.filter(product => product.category.toLowerCase() === category.toLowerCase()) : data;
-
+    let filteredProducts = [...data];
+    
     if (priority === PriorityTypes.Biggest_price){
         filteredProducts.sort((a,b) => b.price - a.price);
 

@@ -1,6 +1,8 @@
+'use client'
 /* eslint-disable @next/next/no-img-element */
-import { useProduct } from "@/hooks/useProducts";
-import { useRouter } from "next/navigation"
+import { useProductDetails } from "@/hooks/ProductDetails/useProductDetail";
+import Link from "next/link";
+
 
 interface ProductCardProps {
     image: string,
@@ -11,12 +13,7 @@ interface ProductCardProps {
 
 export function ProductCard(props: ProductCardProps) {
 
-    const router = useRouter();
-    const { product, loading } = useProduct({ productId: props.id })
-
-    const handleNavigate = () => {
-        router.push("/product?id=" + props.id)
-    }
+    const { product, loading } = useProductDetails({ productId: props.id })
 
     const handleAddToCart = () => {
         let cartItems = localStorage.getItem('cart-items')
@@ -43,7 +40,6 @@ export function ProductCard(props: ProductCardProps) {
             localStorage.setItem('cart-items', JSON.stringify(newCart))
         }
         alert('Item adicionado ao carrinho')
-        window.location.reload()
     }
 
     return (
@@ -51,20 +47,20 @@ export function ProductCard(props: ProductCardProps) {
             className="flex items-center justify-center flex-col w-80 h-96 rounded-xl gap-5 border pt-5 px-2 cursor-pointer"
 
         >
-            <div onClick={handleNavigate}>
+            <Link href={`/product/${props.id}`}>
                 <img
                     className="h-40 max-w-full rounded-lg"
                     src={props.image}
                     alt={props.title}
                 />
-            </div>
-            <div 
+            </Link>
+            <Link href={`/product/${props.id}`}
                 className="bg-white w-full flex flex-col gap-4 items-center"
-                onClick={handleNavigate}
+                
             >
                 <h3 className="text-sm font-semibold mt-4">{props.title}</h3>
                 <p className="font-bold text-sm">${props.price}</p>
-            </div>
+            </Link>
 
             <div className="flex items-center w-full gap-5 mb-3">
                 <button className="w-full border p-2 rounded-3xl font-semibold" onClick={handleAddToCart}>Add to cart</button>
